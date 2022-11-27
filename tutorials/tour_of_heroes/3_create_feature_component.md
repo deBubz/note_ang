@@ -13,6 +13,42 @@ For larger projects, this would be hard to maintain.
 
 ## Make the component
 
+use the cli to create a new component `hero-detail`
+```
+ng generate compoment hero-detail
+```
+
+this cretes the scafold containing the dir `src/app/hero-detail` where 4 files are created
+- the css file
+- the html file
+- the ts component file `HeroDetailComponent`
+- the test file for the component class
+this also adds the `HeroDetailCompoentn` as declaration within `@NgModule` decorator in the mail `app.module.ts` file
+
+### Write the template
+
+now we cut the old detail from the `HeroComponent` and move it into the new `HeroDetailComponent`
+
+### add the `@Input()` property
+
+the `HeroDetailComponent` template binds to the component `hero : Hero` property
+
+to use it, first import the type 
+```js
+import { Hero } from '../hero';
+```
+
+the `hero` prop must be an `Input` prop annotated with the `@Input()` decorator because the parent(external) component binds the prop to component like this
+```js
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+```
+
+declare the prop with with the `@Input()` decorator like this
+```
+@Input() hero?: Hero;
+```
+
+
 ## Show the componenyt
 
 ## What changed
