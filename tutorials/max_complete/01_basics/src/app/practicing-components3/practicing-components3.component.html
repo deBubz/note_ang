@@ -1,0 +1,16 @@
+<h3>Practice Directives</h3>
+
+<button
+  (click)="onDisplayClick()">DisplayDetails</button>
+
+<p *ngIf="displayFlag">Peaka boo</p>
+
+<p>Click Log:</p>
+<p
+  *ngFor="let l of log; let i = index"
+  [attr.data-index]="i"
+  [ngStyle]="{ backgroundColor: getColor(i) }"
+  [ngClass]="{ fivePlus: i > 4}"
+  >
+    {{ i }}. {{ l }}
+</p>

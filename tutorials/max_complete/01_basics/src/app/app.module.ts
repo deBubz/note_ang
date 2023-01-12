@@ -10,6 +10,7 @@ import { SuccessAlertComponent } from './practicing-components1/success-alert/su
 import { PracticingComponents1Component } from './practicing-components1/practicing-components1.component';
 import { FormsModule } from '@angular/forms';
 import { PracticingComponents2Component } from './practicing-components2/practicing-components2.component';
+import { PracticingComponents3Component } from './practicing-components3/practicing-components3.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PracticingComponents2Component } from './practicing-components2/practic
     ServersComponent,
     PracticingComponents1Component,
     PracticingComponents2Component,
+    PracticingComponents3Component,
   ],
   imports: [
     BrowserModule,

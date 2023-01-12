@@ -8,6 +8,12 @@ export class ServersComponent implements OnInit{
   allowNewServer: boolean = false;
   serverCreationStatus: string = "No server Created";
   serverName: string = '';
+  serverCreated: boolean = false;
+
+  servers: Array<string> = [
+    'TestOne',
+    'TestTwo'
+  ]
 
 
   toggleAllowNewServer(): void {
@@ -31,7 +37,9 @@ export class ServersComponent implements OnInit{
 
   onCreateServer() {
     this.serverCreationStatus = `Server was created!\nServer name is ${this.serverName}`;
-    this.allowNewServer = false;
+    this.serverCreated = true;
+
+    this.servers.push(this.serverName);
   }
 
   onUpdateServerName(e : Event) {
