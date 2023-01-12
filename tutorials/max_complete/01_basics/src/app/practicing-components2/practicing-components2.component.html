@@ -1,0 +1,14 @@
+
+<h3>Practicing components - Data binding</h3>
+
+<label>username</label>
+<input
+  type="text"
+  (input)="onCheckInput($event)"
+  [(ngModel)]="username">
+<button
+  (click)="onAddClick()"
+  [disabled]="!validUsername"
+  >Add</button>
+
+<p>{{ username }}</p>
