@@ -1,11 +1,21 @@
 <div class="container">
   <div class="row">
-    <app-cockpit></app-cockpit>
+    <app-cockpit
+      (serverCreated)="onServerAdded($event)"
+      (blueprintCreated)="onBlueprintAdded($event)"></app-cockpit>
   </div>
   <hr>
   <div class="row">
     <div class="col-xs-12">
-      <app-server-element></app-server-element>
+      <app-server-element
+        *ngFor="let server of serverElements"
+        [element]="server"></app-server-element>
     </div>
   </div>
+
+  <hr>
+  <app-practice-exercise></app-practice-exercise>
+  <hr>
+  <app-max-solution></app-max-solution>
+
 </div>

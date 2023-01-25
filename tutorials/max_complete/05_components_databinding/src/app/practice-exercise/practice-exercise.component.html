@@ -1,0 +1,12 @@
+<h1>Practice Binding</h1>
+
+<ul>
+  <li>GameStatus: {{ gameNumber }}</li>
+</ul>
+
+<app-game-controls
+  (startGame)="startGame()"
+  (endGame)="endGame()"
+></app-game-controls>
+<app-even [gameNumber]="gameNumber"></app-even>
+<app-odd [gameNumber]="gameNumber"></app-odd>
