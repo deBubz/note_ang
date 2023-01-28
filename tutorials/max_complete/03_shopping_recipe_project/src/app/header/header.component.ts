@@ -10,24 +10,11 @@ import { Component, Output, EventEmitter } from "@angular/core";
 // }
 
 export class HeaderComponent {
-  @Output() onNavChange = new EventEmitter<{recipe: boolean, shopping: boolean}>()
+  @Output() viewSelected = new EventEmitter<string>()
 
   constructor() {}
 
-  navRecipe() {
-    console.log("recipe")
-    this.onNavChange.emit({
-      recipe: true,
-      shopping: false,
-    })
-  }
-
-  navShopping() {
-    console.log("Shop")
-    this.onNavChange.emit({
-      recipe: false,
-      shopping: true,
-    })
-
+  onSelect(view: string) : void {
+    this.viewSelected.emit(view);
   }
 }

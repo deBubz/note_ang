@@ -8,13 +8,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = '03_shopping_recipe_project';
 
+  componentView: string = 'recipe';
+
   activeView: { recipe: boolean, shopping: boolean} = {
     recipe: true,
     shopping: false
   }
 
-  onNavEmitted(e: {recipe: boolean, shopping: boolean}) {
-    this.activeView = e;
+  onViewSelected(view: string) {
+    this.componentView = view;
   }
 
 }
