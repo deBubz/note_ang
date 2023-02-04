@@ -1,31 +1,23 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
+import { Article } from './article.model';
 
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.css']
 })
-export class ArticleComponent implements OnInit {
+export class ArticleComponent {
   @HostBinding('atr.class') cssClass = 'row';
-
-  votes: number;
-  title: string;
-  link: string;
-
-  constructor() {
-    this.title = 'Ang';
-    this.link = 'badLink';
-    this.votes = 10;
-  }
+  @Input() article: Article;
 
   voteUp() {
-    this.votes++;
+    this.article.voteUp();
+    return false;
   }
 
   voteDown() {
-    this.votes--;
+    this.article.voteDown();
+    return false;
   }
-
-  ngOnInit() {}
 
 }
