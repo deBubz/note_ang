@@ -18,7 +18,13 @@ for functions that interacts with external components (API calls, server respons
 
 ### File Format
 Service Files
-`price.service.1.ts`
+`price.service.1.ts` - current function to test, containing unpredictable behavior
+`price.service.mock.ts` - mock service - defining the mock function, setting the predictable behavior
 Model Files
-`product.model.1.ts`
-Component Files
+`product.model.1.ts` - product model
+`product.model.ts` - **updated** product model using interface
+Test Files
+`price.test.1.ts` - test file, testing `price.service.1` contain unpredictable behavior
+`price.test.ts` - modified test file, using mock service
+Interfaces
+`price-service.interface.ts` - interface for price-service - contain test target declaration but no definition
