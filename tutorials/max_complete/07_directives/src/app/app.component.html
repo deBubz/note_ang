@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>07 Directives</h1>
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-primary" (click)="toggleOdd()">
+                Only show {{ onlyOdd ? "Odd" : "Even"}} Numbers
+            </button>
+            <br>
+
+            <ul class="list-group">
+                <li
+                    class="list-group-item"
+                    [ngClass]="{odd: onlyOdd, even: !onlyOdd}"
+                    [ngStyle]="{backgroundColor: onlyOdd ? 'yellow' : 'transparent'}"
+                    *ngFor="let n of dNumbers">
+                    {{ n }}
+                </li>
+            </ul>
+
+            <p appBasicHighlight [highlightCol]="'red'" [defaultCol]="'yellow'">Style me with basic directive!</p>
+            <p appBetterHighlight >Style me with basic directive!</p>
+        </div>
+    </div>
+</div>
