@@ -1,16 +1,20 @@
-import { Issue } from "../models/issue";
+import { Issue } from "../../models/issue";
+
+export interface Issues {
+  [id: string]: Issue;
+}
 
 export interface Filter {
   text: string;
 };
 
 export interface IssueState {
-  entities: Issue[],
+  entities: Issues,
   filter: Filter;
 }
 
 export const initialState: IssueState = {
-  entities: [],
+  entities: {},
   filter: {
     text: "",
   }
