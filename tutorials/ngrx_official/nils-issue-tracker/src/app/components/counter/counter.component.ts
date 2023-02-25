@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store'
 
-import { increment, State } from '../../store';
+import { increment, multiply, State } from '../../store';
 
 @Component({
   selector: 'app-counter',
@@ -18,5 +18,9 @@ export class CounterComponent {
 
   increment() {
     this.store.dispatch(increment());
+  }
+
+  multiply(f : string): void {
+    this.store.dispatch(multiply({ factor: parseInt(f) }));
   }
 }

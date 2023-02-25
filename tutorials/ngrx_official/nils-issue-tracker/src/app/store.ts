@@ -1,31 +1,27 @@
+import {
+  ActionReducerMap,
+  createAction,
+  createReducer,
+  on,
+  props
+} from '@ngrx/store';
+
 export interface State {
   count: number;
 }
 
-/* Actions */
-import { createAction } from '@ngrx/store';
-
+/* action */
 export const increment = createAction("[counter] increment");
+export const multiply = createAction("[counter] multiply", props<{ factor: number}>());
 
 /* reducer */
-import { on, createReducer } from '@ngrx/store'
-
-const initialState: State = {
-  count: 0
-}
-
 export const countReducer = createReducer(
   0,
-  on(increment, state => state+1)
-  // on(increment, (state) => ({
-  //   ...state,
-  //   count: state.count+1
-  // }))
+  on(increment, state => state+1),
+  on(multiply, (state, payload) => state*payload.factor)
 );
 
 /* action-reducer map */
-import { ActionReducerMap } from '@ngrx/store'
-
 export const reducers: ActionReducerMap<State> = {
   count: countReducer
 }
